@@ -1,9 +1,9 @@
-FROM ubuntu:latest
+FROM centos:7
 MAINTAINER Mathieu Duperre <mathieu.duperre@gmail.com>
 
-RUN apt-get update && apt-get install -y zlib libcurl openssl sqlite 
+RUN yum update -y && yum install -y zlib libcurl openssl sqlite
 
-RUN apt-get install -y gcc-c++ cmake make openssl-devel libcurl-devel zlib-devel sqlite-devel git svn
+RUN yum install -y gcc-c++ cmake make openssl-devel libcurl-devel zlib-devel sqlite-devel git svn
 
 RUN curl -O http://enet.bespin.org/download/enet-1.3.14.tar.gz
 RUN tar xf enet-1.3.14.tar.gz
